@@ -1,6 +1,6 @@
 # Coding Exercises
 
-A bunch of common coding exercises with solutions.
+My solutions to a bunch of coding exercises.
 
 ## Tech Stack
 
