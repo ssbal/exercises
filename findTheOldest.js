@@ -12,7 +12,7 @@ const people = [
 ];
 
 function findTheOldest(arr) {
-  return arr.sort((a, b) => {
+  const oldest = arr.sort((a, b) => {
     if (!a.death) a.death = new Date().getFullYear();
     if (!b.death) b.death = new Date().getFullYear();
 
@@ -20,7 +20,12 @@ function findTheOldest(arr) {
     let nextAge = b.death - b.birth;
 
     return currentAge > nextAge ? -1 : 1;
-  })[0];
+  });
+
+  return {
+    name: oldest[0].name,
+    age: oldest[0].death - oldest[0].birth,
+  };
 }
 
-// findTheOldest(people); // { name: 'David', birth: 1883, death: 2001 }
+// findTheOldest(people); // { name: 'David', age: 118 }
